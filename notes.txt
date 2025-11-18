@@ -216,7 +216,7 @@
         -> A firewall is a network security system that monitors and controls 
             incoming and outgoing network traffic based on predetermined security rules (protocols) 
 
-        -> SSH Protocol 
+        -> SSH Protocol (Secure Shell)
 
             -> Is a network protocol used for secure remote access to 
                 computers over an unsecured network.
@@ -257,3 +257,75 @@
             -> chmod 400 2516.pem 
 
             -> ssh -i 2516.pem ubuntu@13.56.155.130 
+
+18th Nov 2025
+=============
+
+    -> AZURE Server Setup 
+
+        -> Azure Virtual Machines (VM's) is a part of Azure's cloud-computing platform, 
+        Microsoft, that "allows users to rent virtual computers(servers)" 
+        on which to run their "own computer applications".
+
+        -> Server                   ==> Azure Virtual Machine (VM)
+        -> Server Name              ==> VM Name 
+        -> Operating System         ==> Image ( Linux Ubuntu 22.04)
+        -> CPU + RAM                ==> Sizes (b1s, b2s etc)           
+        -> Login / Authentication   ==> Key Pairs (Public Key & Private Key)
+        -> Network                  ==> VNET (Virtual Network)
+        -> Firewall                 ==> Network Security Group (Rules: Protocol, Port, Source)
+        -> Storage (Hard Disk)      ==> Disk is 30 GB 
+
+    -> NOTE : Using AWS or AZURE or any other cloud provider, it doesn't make any difference moving forward 
+
+    -> Using gmail.com on Edge, Chrome, Firefox etc - outcome is same 
+
+    -> We are using Linux Servers, which has only CLI (Command Line Interface)
+
+    -> CLI - Command Line Interface
+
+        -> CLI is a powerful tool for interacting with servers 
+            through "text based commands" 
+
+        -> CLI is very helpful in Automating Repetitive Tasks 
+
+    -> Requirement From Customer 
+
+        -> Create 100 Text files 
+        -> Assume you don't have any CLI knowledge 
+        -> Then we are left with GUI - Graphical User Interface 
+            -> 1 text file creation - 3 seconds 
+            -> 100 text file creation - 300 seconds (5 mins)
+            -> 100000 text file creation - 300000 seconds (5000 mins)   
+
+    -> Resolving Requirement From Customer Using CLI 
+
+        -> touch file-{1..100}.txt
+
+    -> Hardware & System Software(OS) Commands 
+
+        -> CPU / Processor Info 
+
+            -> cat /proc/cpuinfo 
+        
+        -> RAM Info 
+
+            -> free -m 
+
+        -> Disk Info 
+
+            -> df -h 
+
+        -> Network  Info 
+
+            -> ip address 
+
+    -> System Software (OS)
+
+        -> uname 
+        -> cat /etc/os-release 
+
+    -> Check Running Processes 
+
+        -> ps -ef 
+        -> htop (to quit click q on keyboard)
