@@ -815,3 +815,65 @@
     -> NOTE: In Parallel we have "DEVELOPMENT" team, who are "DEVELOPING APPLICATIONS" 
 
         -> By Next Week, As a DevOps Engineer, you will be knowing about Development 
+
+2nd Dec 2025
+=============
+
+    -> "DEVELOPMENT" team
+
+        -> DEVELOPMENT Team mainly builds Applications 
+
+        -> DEVELOPMENT Means Coding 
+
+    -> Version Control Systems (VCS)
+
+        ->  Version control / Revision control / Source control
+            is a process that helps to keep track of changes made to 
+            files (computer programs, web site files, documents etc)
+
+        -> https://www.sirhow.com/uploads/2023/07/check-gpay-transaction-history-step-4.jpg
+
+        -> Advantage Of VCS is Revert Changes To Previous Working Versions, 
+            if there are issues in new version
+
+        -> Git - Client Side Software     - Developer 
+
+            -> Git a tool to implement VCS 
+
+            -> Git helps in tracking code / changes in your code 
+
+            -> Git tracks code in your laptop 
+
+        -> GitHub - Server Side Software  - Organizations
+
+            -> GitHub provides a platform to store code 
+
+            -> GitHub Stores All Versions Of Code in centralized location (github.com)
+
+        -> Repository 
+
+            -> A repository contains all of your project's files and each file's revision history. 
+                Developers can discuss and manage your project's work within the repository.
+
+        -> JIRA 
+
+            -> Jira is a proprietary product developed by Atlassian that allows 
+                bug tracking, issue tracking and agile project management. 
+        
+        -> GitHub Projects & Issues (FREE)
+
+            -> GitHub Projects are a feature within GitHub designed for planning and tracking work
+
+            -> GitHub Issues is a built-in, lightweight issue-tracking system in every repository 
+                used for planning, discussing, and tracking work like 
+                bug reports, new features, and tasks.
+
+            -> NOTE: Within Project we have Issues 
+
+
+        -> Create GitHub Account 
+
+        -> Install Visual Studio Code (VS Code)
+            -> IDE - Integrated Development Environment (Writing Code / Scripts)
+            
+        -> Install Git Bash (win)     
