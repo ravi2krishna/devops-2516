@@ -877,3 +877,41 @@
             -> IDE - Integrated Development Environment (Writing Code / Scripts)
             
         -> Install Git Bash (win)     
+
+
+3rd Dec 2025
+=============
+
+    -> Setting the git Configuration
+        
+        -> git config --global user.name "ravi2krishna"
+        -> git config --global user.email "ravi2krishna@gmail.com"
+
+    -> Create a branch called dev as a developer
+    -> Clone Remote Github Repository 
+    -> Switch to dev branch and start coding 
+
+    -> Once Application is Developed 
+
+    -> How Customers Will Access Application ?
+
+        -> Customers Will Access Application Via Servers 
+
+    -> To Host / Deploy Applications, Follow Below Approach 
+
+        -> Create Server 
+
+        -> Install Appropriate Softwares On Servers 
+
+        -> Host / Deploy Application On Server 
+
+        NOTE: Above Activities are Operations Oriented 
+
+    -> Web Server 
+
+        -> A web server is computer software [ Nginx HTTP Server ] 
+        and underlying hardware [ AWS Instance / AZURE VM ] 
+        that accepts requests via HTTP (port 80) 
+        to distribute web content.
+
+        -> NOTE: All Servers that host websites must have web server program.
