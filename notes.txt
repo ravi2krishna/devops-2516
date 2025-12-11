@@ -1325,3 +1325,126 @@
             -> curl -u username:password -X GET 'http://3.144.87.187:8081/repository/react-app/react-app-1.1.zip' --output react-app-1.1.zip
 
         -> NOTE: Terminate All Servers Once Lab is done
+
+
+11th Dec 2025
+=============
+
+    -> Project 1 
+
+        -> Code -> Test -> Build -> Release -> Deploy 
+
+            -> Git & GitHub -> SonarQube -> NPM -> Nexus -> Nginx Web Server 
+
+    -> DevOps is a set of PRACTICES that works towards the 
+        "AUTOMATION" and "INTEGRATION" of the processes between 
+        Software Development (Dev) and IT (Ops) teams, 
+        so that organizations can "BUILD" and "DEPLOY" softwares/applications 
+        "FASTER" and more "RELIABLE"
+
+    -> Whole Application Process (Dev & Ops) Took 2-3 Hours (2-3 Sessions)
+
+        -> Organizations are looking for Acceleration i.e "FASTER"
+
+        -> For our earlier experience, using SonarQube(45 Mins) & Nexus(45 Mins), traditionally 
+
+            -> When we used Docker hardly SonarQube(5 Mins) & Nexus(5 Mins)
+
+            -> Why shouldn't you Apply Docker on Whole Application Process ??? 
+
+                -> Whole Application Process (Dev & Ops) -> Traditionally Took 2-3 Hours
+
+                -> Whole Application Process (Dev & Ops) -> Docker Took 5-10 mins 
+    
+    -> NOTE: To Accelerate Development & Deployment process, we can use "Containerization"
+
+    
+    -> Project 2 - Implement Acceleration i.e FASTNESS using "Containerization"
+
+    -> Containerization
+
+        -> Containerization is one of the practices in devops, which provides 
+
+            -> "Lightweight" and "Efficient" way of running applications 
+            
+            -> Promotes "Faster Deployments" and "Portability" for applications
+
+        -> Containerization is implemented by software/tool "DOCKER" 
+
+    -> Container 
+
+        -> An object for holding or transporting something 
+
+            -> https://upload.wikimedia.org/wikipedia/commons/d/df/Container_01_KMJ.jpg
+
+        -> In terms of software development, a container is an object 
+            for holding or transporting/shipping applications.
+
+    
+    -> Monolithic Architecture
+
+        -> Monolithic architecture is a software design pattern where the entire application 
+            is built as a "single, indivisible unit".
+
+    -> Micro Services Architecture
+
+        -> Microservices Architecture is a software development approach that involves 
+            building small, independent services that work together to create a larger application.
+
+    -> NOTE: As DevOps Engineer, Deploying Micro Sized Applications(Micro Services) on Container is our work
+
+    -> Docker Architecture
+
+        -> Docker Client (CLI)  
+
+        -> Docker Server (Daemon)
+
+        -> Docker Registry (https://hub.docker.com)
+
+        -> Docker Images
+
+        -> Docker Containers 
+
+    -> Be it a framework (nodejs), Be it a tool (sonarqube), Be it an Operating System (ubuntu) 
+
+        -> All above are considered as Docker Images 
+
+        -> These Docker Images are stored in Docker Registry (https://hub.docker.com) [ Like Play store ]
+
+        -> Docker Containers are Runtime of images 
+
+            -> Images are like Templates / Blueprints
+
+            -> Containers are Real Entities We run
+
+            -> NOTE: To create a container, image is mandatory 
+
+        -> A container is an object for holding or transporting/shipping applications.
+
+            -> To Create Container, we use Docker Client (CLI) and make a request 
+
+            -> DevOps Engineer -> Makes Request For Creating Container Using Docker Client (CLI)
+
+                -> Docker Client (CLI) -> Sends Request To Docker Server (Daemon) -> Connect To Docker Registry
+
+                    -> Fetch Docker Images to Server(compute) -> Using Image Runs/Creates Containers
+
+        -> The Daemon/Service is responsible for managing Docker objects 
+            such as images, containers, and networks. All the heavy lifting is done by daemon.
+        
+        -> The client sends commands to the daemon and receives output. 
+        
+        -> The registry stores Docker images and allows them to be shared among users and systems.
+
+        -> A Docker image is a lightweight, standalone, and executable package 
+            that includes everything needed to run the desired software application.
+
+        -> A container in Docker allows you to run an application with all the dependencies it needs. 
+            To create a container we need Docker Image.
+
+        -> NOTE: Know Docker -> Know Kubernetes 
+
+        
+
+
+            
