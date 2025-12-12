@@ -1445,6 +1445,119 @@
         -> NOTE: Know Docker -> Know Kubernetes 
 
         
+12th Dec 2025
+=============
 
+    -> Docker Setup 
 
+        -> AWS 
             
+            -> “t2.medium instance” i.e 4 GB RAM - 2 CPU’s on AWS, with 20 GB as Storage.  
+                
+        -> AZURE 
+            
+            -> B2S, i.e 4 GB RAM - 2 CPU’s on AZURE, with 30 GB as Storage   
+
+        -> Add Following Rules in Security Groups / Network Security Groups
+            -> 22, 80, 32768-61000, 8080-9090
+
+                -> 32768-61000 - Docker Pre defined port range(*)   
+                -> 8080-9090 - User defined port range
+
+        -> Setup Docker 
+
+            -> docker 
+            -> wget -O get-docker.sh https://get.docker.com && sh get-docker.sh
+            -> docker
+
+        -> docker image ls
+            
+            -> permission denied
+
+        -> To Overcome Permissions issues, add ubuntu user to docker group 
+            
+            -> sudo usermod -aG docker ubuntu
+                
+                -> logout & login back
+
+            -> docker image ls
+            
+        -> Creating Container 
+
+            -> docker container ls -a 
+
+            -> docker container run image 
+
+            -> docker container run hello-world
+
+            -> docker image ls
+
+            -> docker container ls -a 
+
+    -> To run containers we have modes 
+
+        -> No Mode 
+
+            -> docker container run --name c1 ubuntu:22.04
+
+            -> docker container ls -a
+
+            -> NOTE: Containers are in exit state i.e stopped 
+
+        -> Interactive / Foreground Mode (development / troubleshoot)
+
+            -> docker container run -it --name c2 ubuntu:22.04
+
+            -> NOTE: In Interactive Mode Containers will stop once we come out of the container
+
+        -> Detached / Background Mode (production)
+
+            -> docker container run -dt --name c3 ubuntu:22.04
+
+        -> Use below command to execute commands in container 
+
+            -> docker container exec name_of_container <command>
+
+            -> docker container exec c3 ps -ef
+
+            -> docker container exec -it c3 bash (connect to container running in Background)
+
+    -> Container Management Commands 
+
+        -> docker container run (creating)
+
+        -> docker container stop c3 (stopping)
+
+        -> docker container start c3 (starting)
+
+        -> docker container rm c3 (removing)
+
+        -> docker container rm -f c3 (removing)
+
+    -> Goal is Run Web Application In Container i.e Just like How we did in VM 
+
+        -> docker container run -dt --name web-1 ubuntu:22.04
+
+        -> docker container exec -it web-1 bash
+
+        -> ss -ntpl
+            bash: ss: command not found
+        
+        -> apt update -y && apt install iproute2 -y 
+
+        -> ss -ntpl
+
+        -> apt update -y && apt install nginx -y
+        
+        -> ss -ntpl
+
+        -> service nginx start
+
+        -> ss -ntpl
+
+        -> docker container inspect web-1
+
+        -> curl container-ip-address 
+
+    -> NOTE: Above approach is not a recommended way, but it connects how we shifted from VM to Container 
+
