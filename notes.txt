@@ -1561,3 +1561,113 @@
 
     -> NOTE: Above approach is not a recommended way, but it connects how we shifted from VM to Container 
 
+
+15th Dec 2025
+=============
+
+    -> docker container rm -f web-1 (removing)
+    -> docker container run -dt --name web-1 ubuntu:22.04
+    -> docker container inspect web-1
+    -> curl container-ip-address 
+
+    -> NOTE: Above approach is not a recommended way, as we need to setup nginx from scratch again 
+
+    -> NOTE: Below approach is a recommended way
+
+    -> docker container run -dt --name web-2 nginx 
+    -> docker container inspect web-2
+    -> curl container-ip-address
+
+    -> Browse Public-IP (No access to Nginx Page)
+
+        -> As nginx is running on the container, not on the host 
+
+        -> Now how can we make customers access web applications from internet ??
+
+    -> To Access Containers Outside i.e internet we need to understand docker networking  
+
+    -> Docker supports following network drivers, each designed for specific use case
+        
+        -> Host
+        -> None
+        -> Bridge
+
+    -> docker network ls 
+
+    -> docker container ls -a
+
+    -> docker container inspect web-1
+    -> docker container inspect web-2
+    -> docker network inspect bridge
+
+    -> By Default, Containers will run on "bridge" network 
+
+    -> Host Network Driver
+
+        -> This driver removes network isolation between the container and the Docker host, 
+        allowing them to share the host’s networking namespace
+
+        -> docker network ls 
+        -> docker network inspect host 
+        -> docker container run -dt --name web-3 --network=host nginx 
+        -> docker network inspect host 
+        -> docker container inspect web-3
+        -> docker container ls -a
+
+        -> NOTE: Check below command 
+            
+            -> docker container run -dt --name web-4 --network=host nginx 
+            -> docker network inspect host 
+            -> docker container ls -a
+            -> docker container logs web-4
+                -> 80 failed (98: Address already in use) 
+                -> NOTE: Fix is upcoming bridge network 
+
+    
+    -> None Network Driver
+
+        -> This driver removes network access to containers i.e no network (no www)
+
+        -> docker container exec web-3 apt update -y 
+
+            -> This confirms we have network access in host network
+
+        -> docker container run -dt --name web-5 --network=none nginx 
+        -> docker network inspect none 
+        -> docker container ls -a
+        -> docker container exec web-5 apt update -y 
+
+    
+    -> Bridge Network Driver
+
+        -> The default network driver for containers. 
+        When a new container is run, it can be attached to this Bridge network.
+
+        -> Using bridge network we can run multiple containers at same time, 
+            but cannot be accessed outside via internet. 
+
+        -> To Allow External Access To Containers using bridge, we can use Port Forwarding (-p)
+
+        -> This is the activity that makes a port inside a container 
+            accessible to ports on the Docker host for external access.
+
+            -> -p - docker user defined ports ( custom range 8080 to 9090 )
+
+        -> docker container run -dt --name web-6 -p 8080:80 nginx 
+        -> docker container ls -a
+        -> docker container run -dt --name web-7 -p 8081:80 nginx 
+        -> docker container run -dt --name web-8 -p 8082:80 nginx 
+        -> docker container ls -a
+
+            -> -P - docker ephemeral ports ( predefined range 32768 to 61000 )
+
+        -> docker container run -dt --name web-9 -P nginx 
+        -> docker container ls -a
+        -> docker container run -dt --name web-10 -P nginx 
+        -> docker container ls -a
+    
+            -> docker container run -dt --name sonarqube --restart=always -p 9000:9000 sonarqube (don't run)
+            -> docker container run -dt --name nexus --restart=always -p 8081:8081 sonatype/nexus3 (don't run)
+
+        -> docker container run -dt --name web-11 --restart=always -p 8083:80 nginx 
+        -> docker container ls -a
