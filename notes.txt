@@ -1943,3 +1943,47 @@
     -> docker build -t ravi2krishna/react-app-2516 .
     -> docker container run -dt --name react-app -p 8081:80 ravi2krishna/react-app-2516
     -> docker push ravi2krishna/react-app-2516
+
+
+19th Dec 2025
+=============
+
+    -> DevOps is a set of PRACTICES that works towards the 
+        "AUTOMATION" and "INTEGRATION" of the processes between 
+        Software Development (Dev) and IT (Ops) teams, 
+        so that organizations can "BUILD" and "DEPLOY" softwares/applications 
+        "FASTER" and more "RELIABLE"
+
+    -> Project 3 
+
+        -> Project 3 - Implement "RELIABILITY" using "Orchestration"
+
+        -> Once we Terminated Docker Server, we need to setup Environment from scratch again (Single Point Of Failure)
+
+        -> High Availability (HA)
+
+            -> HA means designing IT systems to operate continuously with minimal or zero downtime.
+
+            -> To achieve HA we eliminate Single Point Of Failure
+
+        -> High availability in AWS/AZURE ensures that applications and services are 
+            continuously accessible and operational, even in the event of component failures or disruptions. 
+
+        -> HA is achieved by deploying resources across multiple availability zones (AZs)
+
+        -> To Achieve High Availability / Reliability we need process called "Orchestration"
+
+        -> To implement Orchestration, we use "Kubernetes" 
+
+    -> Production-Grade Container Orchestration
+
+        -> Production-grade container orchestration refers to the capability of 
+                "running containerized applications in a production environment" effectively and reliably.
+    
+    -> Kubernetes
+
+        -> Kubernetes is a Production-Grade Container Orchestration, which builds up on 
+            "15 years of experience of running production workloads at Google"
+
+        -> It was originally designed by Google, and is now maintained by the 
+            Cloud Native Computing Foundation (CNCF) 
