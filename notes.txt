@@ -2083,3 +2083,140 @@
             -> 22, 80, 31000-32767
 
     -> In Minikube We need to do setup Manually, but in Production vendors provide the Setup 
+
+
+23rd Dec 2025
+=============
+
+    -> Setup Minikube 
+
+    -> Setup Docker 
+
+            -> docker 
+            -> wget -O get-docker.sh https://get.docker.com && sh get-docker.sh
+            -> docker
+            -> sudo usermod -aG docker ubuntu
+
+    -> Setup Minikube
+
+            -> minikube
+            -> curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+            -> sudo install minikube-linux-amd64 /usr/local/bin/minikube
+            -> minikube
+            -> minikube status
+            -> minikube start
+            -> minikube status
+
+    -> Setup kubectl
+
+            -> kubectl
+            -> curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+            -> chmod u+x kubectl 
+            -> sudo mv kubectl /usr/local/bin/kubectl
+            -> kubectl 
+
+    -> NOTE: Once the cluster is setup, we are gonna be using "kubectl" to do any sort of work on the cluster 
+        like getting status, creating applications etc 
+
+            -> kubectl get pods
+            -> kubectl get replicasets
+            -> kubectl get deployments
+
+    -> Kubernetes Objects 
+
+        -> By creating an object, you’re telling the Kubernetes system what applications to run in the cluster
+
+        -> Few examples of kubernetes objects include pods, replicasets, deployments etc. 
+
+        -> To work with Kubernetes objects, whether to "create", "modify" or "delete" them, 
+            you’ll need to use a command-line tool called KUBECTL. 
+
+    -> Object Spec & Object Status
+
+        -> Object Spec
+
+            -> The object spec, which you(devops engineer) must provide, 
+            describes your desired state for the object(application), 
+            the characteristics that you want the object to have. 
+
+        -> Object Status
+
+            -> The object status describes the actual state of the object, 
+                and is supplied and updated by the Kubernetes system.
+
+    -> Manage Objects 
+
+        -> Managing Objects inside kubernetes can be done using
+            -> Commands - Imperative Commands
+            -> CODE(YAML) - Declarative Configuration files or Manifests (recommended)
+
+    -> https://kubernetes.io/docs/concepts/overview/working-with-objects/
+
+    -> Pod (Object)
+
+       -> A Pod represents a unit of deployment i.e a "single instance of an application" in Kubernetes.  
+
+    -> Imperative Commands 
+
+        -> Similar To Docker Commands 
+
+            -> kubectl get pods 
+
+            -> kubectl run nginx-pod --image nginx --port=80 
+
+            -> kubectl get pods 
+
+            -> kubectl describe pod nginx-pod
+
+            -> kubectl exec nginx-pod -- cat /usr/share/nginx/html/index.html 
+
+            -> kubectl delete pod nginx-pod
+
+            -> kubectl get pods 
+
+    -> CODE(YAML) 
+
+        -> YAML is a human-readable data serialization language. 
+        It is commonly used for "configuration files" (k8s) and in applications 
+        where data is being stored or transmitted.
+
+        -> YAML focuses on USER FRIENDLINESS & EASY READABILITY
+
+        -> YAML is used to store information about different k8s objects 
+            pods, replicasets, deployments etc 
+
+        -> YAML in k8s 
+
+            -> Simple Key Values 
+
+            -> Dictionaries: Set Of Key Values 
+
+            -> Lists: Multiple Items 
+
+            -> Combinations Of above 
+
+    -> NOTE: Every k8s object has 4 Top Level items in yaml script 
+    
+        -> apiVersion
+        -> kind
+        -> metadata
+        -> spec 
+        
+    -> Pod Using YAML 
+
+        -> Create Pod Definition (pod.yaml) 
+
+        -> kubectl get pods 
+
+        -> kubectl apply -f pod.yaml 
+
+        -> kubectl get pods 
+
+        -> kubectl describe pod nginx-pod
+
+        -> kubectl exec nginx-pod -- cat /usr/share/nginx/html/index.html 
+
+        -> kubectl delete pod nginx-pod
+
+        -> kubectl get pods 
+    
